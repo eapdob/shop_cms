@@ -1,0 +1,68 @@
+[2020-04-16 06:30:57] Текст ошибки: Function name must be a string | Файл: /var/www/html/shop/vendor/shop/core/Cache.php | Строка: 23
+================
+[2020-04-16 06:31:34] Текст ошибки: Function name must be a string | Файл: /var/www/html/shop/vendor/shop/core/Cache.php | Строка: 23
+================
+[2020-04-16 06:32:06] Текст ошибки: Function name must be a string | Файл: /var/www/html/shop/vendor/shop/core/Cache.php | Строка: 23
+================
+[2020-04-16 06:32:33] Текст ошибки: Function name must be a string | Файл: /var/www/html/shop/vendor/shop/core/Cache.php | Строка: 23
+================
+[2020-04-16 06:35:24] Текст ошибки: Call to a member function get() on null | Файл: /var/www/html/shop/app/controllers/MainController.php | Строка: 31
+================
+[2020-04-16 06:35:29] Текст ошибки: Call to a member function get() on null | Файл: /var/www/html/shop/app/controllers/MainController.php | Строка: 31
+================
+[2020-04-16 06:35:34] Текст ошибки: Call to a member function get() on null | Файл: /var/www/html/shop/app/controllers/MainController.php | Строка: 31
+================
+[2020-04-16 14:03:55] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:55] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:55] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:55] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:55] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:56] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:57] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:03:58] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:04:44] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 14:05:35] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 15:27:04] Текст ошибки: Call to undefined function getMeta() | Файл: /var/www/html/shop/app/views/layouts/watches.php | Строка: 10
+================
+[2020-04-16 16:48:40] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 16:48:42] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
+[2020-04-16 16:48:43] Текст ошибки: Страница не найдена | Файл: /var/www/html/shop/vendor/shop/core/Router.php | Строка: 41
+================
