@@ -1883,6 +1883,23 @@ h3.ghj {
 	margin-bottom: 3rem;
 }
 
+/* megamenu-js */
+
+.menu > ul {
+	background: #fff;
+}
+
+.menu > ul > li {
+	background: #fff;
+}
+
+.menu > ul > li:hover {
+	background: #fff;
+}
+
+.menu > ul > li > ul {
+	background: #fff;
+}
 /* END new styles */
 
 /*--end-register--*/
