@@ -7,10 +7,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+    <base href="/">
     <?=$this->getMeta();?>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="stylesheet" href="megamenu/css/ionicons.min.css">
     <link rel="stylesheet" href="megamenu/css/style.css">
+    <!-- FlexSlider -->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
     <!--Custom-Theme-files-->
     <!--theme-style-->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -59,7 +62,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--top-header-->
 <!--start-logo-->
 <div class="logo">
-    <a href="index.html"><h1>Luxury Watches</h1></a>
+    <a href="<?=PATH;?>"><h1>Luxury Watches</h1></a>
 </div>
 <!--start-logo-->
 <!--bottom-header-->
@@ -157,6 +160,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <!--footer-end-->
+<?php $currency = \shop\App::$app->getProperty('currency'); ?>
+<script>
+    let path = '<?=PATH;?>',
+        course = <?=$currency['value'];?>,
+        symbolLeft = '<?=$currency['symbol_left'];?>',
+        symbolRight = '<?=$currency['symbol_right'];?>';
+</script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/simpleCart.min.js"> </script>
 <script type="text/javascript" src="js/memenu.js"></script>
@@ -185,6 +195,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     });
 </script>
 <script src="megamenu/js/megamenu.js"></script>
+<!-- FlexSlider -->
+<script src="js/imagezoom.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<script>
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+</script>
+<!-- dropdown -->
+<!--dropdown-->
+<script src="js/jquery.easydropdown.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        var menu_ul = $('.menu_drop > li > ul'),
+            menu_a  = $('.menu_drop > li > a');
+
+        menu_ul.hide();
+
+        menu_a.click(function(e) {
+            e.preventDefault();
+            if(!$(this).hasClass('active')) {
+                menu_a.removeClass('active');
+                menu_ul.filter(':visible').slideUp('normal');
+                $(this).addClass('active').next().stop(true,true).slideDown('normal');
+            } else {
+                $(this).removeClass('active');
+                $(this).next().stop(true,true).slideUp('normal');
+            }
+        });
+
+    });
+</script>
 <script src="js/main.js"></script>
+<?php
+use \RedBeanPHP\R as R;
+$logs = R::getDatabaseAdapter()
+    ->getDatabase()
+    ->getLogger();
+
+debug( $logs->grep('SELECT') );
+?>
 </body>
 </html>

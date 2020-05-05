@@ -1577,6 +1577,9 @@ span.name {
 .latestproducts {
     margin-top: 3.5em;
 }
+.recentlyproducts {
+	margin-top: 3.5em;
+}
 .single-para h2 {
     font-size: 2.2em;
     color: #000;
@@ -1636,11 +1639,12 @@ ul.star-footer li i {
 	margin:0;
 }
 .available ul li {
+	display: block;
     list-style: none;
     padding: 0 0.5em 0 0;
     color: #4c4c4c;
     font-size: 1.1em;
-    float: left;
+    /*float: left;*/
     width: 100%;
     margin: 0.5em 0;
 }
@@ -1900,6 +1904,14 @@ h3.ghj {
 .menu > ul > li > ul {
 	background: #fff;
 }
+
+/* product */
+.product-quantity {
+	margin-top: 2.8em;
+	margin-right: 10px;
+	float: left;
+}
+
 /* END new styles */
 
 /*--end-register--*/
@@ -2307,6 +2319,7 @@ figure.effect-bubba p {
     font-size: 13px;
 }
 a.add-cart {
+	margin-top: 1em;
     font-size: 1em;
 }
 .tabs {
