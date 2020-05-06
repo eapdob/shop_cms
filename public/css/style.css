@@ -299,7 +299,7 @@ span.simpleCart_total {
 	height: 0;
 	left: 13px;
 	right: 0;
-	top: 36px;
+	top: 28px;
 	background: #73B6E1;
 	overflow: hidden;
 	opacity: 0;
@@ -1910,6 +1910,15 @@ h3.ghj {
 	margin-top: 2.8em;
 	margin-right: 10px;
 	float: left;
+}
+
+/* cart */
+#cart table img {
+	height: 50px;
+}
+
+.del-item {
+	cursor: pointer;
 }
 
 /* END new styles */

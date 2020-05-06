@@ -60,18 +60,20 @@
                                 <?=$currency['symbol_left'];?><?=$product->price * $currency['value'];?><?=$currency['symbol_right'];?>
                             </h5>
                             <p><?=$product->content;?></p>
-                            <div class="available">
-                                <ul>
-                                    <li>Color
-                                        <select>
-                                            <option>Выбрать цвет</option>
-                                            <?php foreach ($modification as $mod): ?>
-                                                <option data-title="<?=$mod->title;?>" data-price="<?=$mod->price * $currency['value'];?>" value="<?=$mod->id;?>"><?=$mod->title;?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </li>
-                                </ul>
-                            </div>
+                            <?php if ($modification): ?>
+                                <div class="available">
+                                    <ul>
+                                        <li>Color
+                                            <select>
+                                                <option>Выбрать цвет</option>
+                                                <?php foreach ($modification as $mod): ?>
+                                                    <option data-title="<?=$mod->title;?>" data-price="<?=$mod->price * $currency['value'];?>" value="<?=$mod->id;?>"><?=$mod->title;?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                             <ul class="tag-men">
                                 <li><span>Category</span>
                                     <span class="women1">:<a
