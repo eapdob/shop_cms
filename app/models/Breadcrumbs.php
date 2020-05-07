@@ -12,8 +12,17 @@ class Breadcrumbs {
         $breadcrumbs = "<li><a href='" . PATH . "'>Главная</a></li>";
 
         if ($breadcrumbsArray) {
+            if ($name == '') {
+                $index = 0;
+                $lastIndex = count($breadcrumbsArray) - 1;
+            }
             foreach ($breadcrumbsArray as $alias => $title) {
-                $breadcrumbs .= "<li><a href='" . PATH . "category/{$alias}'>{$title}</a></li>";
+                if ($lastIndex != $index) {
+                    $breadcrumbs .= "<li><a href='" . PATH . "category/{$alias}'>{$title}</a></li>";
+                } else {
+                    $breadcrumbs .= "<li>{$title}</li>";
+                }
+                $index++;
             }
         }
 
