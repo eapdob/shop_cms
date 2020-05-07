@@ -2016,6 +2016,12 @@ span.twitter-typeahead {
 .input-group.input-group-lg span.twitter-typeahead .tt-dropdown-menu {
 	top: 46px !important;
 }
+
+/* pagination */
+.pagination-text {
+	margin-top: 1.2em;
+}
+
 /* END new styles */
 
 /*--end-register--*/
