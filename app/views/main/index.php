@@ -65,7 +65,7 @@
                                 </div>
                                 <?php if ($hit->old_price): ?>
                                     <div class="srch">
-                                        <span>-<?php echo abs(ceil(($hit->price * $curr['value'] * 100) / $hit->old_price * $curr['value'] - 100 )); ?>%</span>
+                                        <span>-<?php echo abs(ceil((($hit->price * $curr['value']) / ($hit->old_price * $curr['value'])) * 100) - 100); ?>%</span>
                                     </div>
                                 <?php endif; ?>
                             </div>

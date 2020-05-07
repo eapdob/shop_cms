@@ -58,6 +58,32 @@ $(document).ready(function () {
         });
     });
     /* END cart */
+
+    /* search */
+    let products = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            wildcard: '%QUERY',
+            url: path + 'search/typehead?query=%QUERY'
+        }
+    });
+
+    products.initialize();
+
+    $('#typehead').typeahead({
+        highlight: true
+    }, {
+        name: 'products',
+        display: 'title',
+        limit: 9,
+        source: products
+    });
+
+    $('#typehead').bind('typehead:select', function(ev, suggestion) {
+        window.location = path + 'search/?s=' + encodeURIComponent(suggestion.title);
+    });
+    /* END search */
 });
 
 function showCart(cart) {
