@@ -1430,7 +1430,7 @@ a.mask {
 .account-bottom {
     margin-top: 2.2em;
 }
-.account-left input[type="text"],.account-left input[type="password"] {
+.account-left input[type="text"],.account-left input[type="password"], .account-left input[type="email"] {
     width: 90%;
     margin: 0px;
     color: #000;
@@ -2020,6 +2020,31 @@ span.twitter-typeahead {
 /* pagination */
 .pagination-text {
 	margin-top: 1.2em;
+}
+
+/* account */
+.drop > .btn-group > a {
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	top: -2px;
+}
+
+form .has-success .form-control {
+	border-color: #3c763d;
+}
+
+form .has-error .form-control {
+	border-color: #a94547;
+}
+
+.has-error, .has-success {
+	position: relative;
+}
+
+.form-control-feedback {
+	right: 10px;
+	top: 25px;
 }
 
 /* END new styles */

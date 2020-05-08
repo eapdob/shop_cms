@@ -33,13 +33,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <?php new \app\widgets\currency\Currency(); ?>
                         </select>
                     </div>
-                    <div class="box1">
-                        <select tabindex="4" class="dropdown">
-                            <option value="" class="label">English :</option>
-                            <option value="1">English</option>
-                            <option value="2">French</option>
-                            <option value="3">German</option>
-                        </select>
+                    <div class="btn-group">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <?php if (!empty($_SESSION['user'])): ?>
+                                <li><a href="#">Welcome, <?=h($_SESSION['user']['name']);?></a></li>
+                                <li><a href="user/logout">Exit</a></li>
+                            <?php else: ?>
+                                <li><a href="user/login">Login</a></li>
+                                <li><a href="user/signup">Sign Up</a></li>
+                            <?php endif; ?>
+                        </ul>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -101,6 +105,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!--bottom-header-->
 <div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?php if (isset($_SESSION['error'])): ?>
+                    <div class="alert alert-danger">
+                        <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['success'])): ?>
+                    <div class="alert alert-success">
+                        <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
     <?=$content;?>
 </div>
 <!--information-starts-->
@@ -198,6 +218,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/typeahead.bundle.js"></script>
+<!-- Bootstrap validator -->
+<script src="js/validator.js"></script>
 <!-- memenu-->
 <script type="text/javascript" src="js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
