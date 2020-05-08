@@ -57,6 +57,8 @@ $(document).ready(function () {
             }
         });
     });
+
+
     /* END cart */
 
     /* search */
@@ -84,6 +86,25 @@ $(document).ready(function () {
         window.location = path + 'search/?s=' + encodeURIComponent(suggestion.title);
     });
     /* END search */
+
+    /* checkout */
+    $('.cart').on('click', '.del-item', function (e) {
+        e.preventDefault();
+        let id = $(this).data('id');
+
+        $.ajax({
+            url: '/cart/delete',
+            data: {id: id},
+            type: 'GET',
+            success: function (res) {
+                window.location = path + 'cart/view';
+            },
+            error: function () {
+                alert('Ошибка! Попробуйте позже');
+            }
+        });
+    });
+    /* END checkout */
 });
 
 function showCart(cart) {

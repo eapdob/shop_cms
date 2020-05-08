@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use app\models\Cart;
-use RedBeanPHP\R;
+use app\models\Order;
+use app\models\User;
+use RedBeanPHP\R as R;
 
 class CartController extends AppController {
 
@@ -66,6 +68,43 @@ class CartController extends AppController {
             $this->loadView('cart_modal');
         }
 
+        redirect();
+    }
+
+    public function viewAction() {
+        $this->setMeta('Корзина');
+    }
+
+    public function checkoutAction() {
+        if (!empty($_POST)) {
+
+            // check user
+            if (!User::checkAuth()) {
+                $user = new User();
+                $data = $_POST;
+                $user->load($data);
+                $user->changeRulesForCheckout();
+                if (!$user->validate($data)) {
+                    $user->getErrors();
+                    $_SESSION['form_data'] = $data;
+                    redirect();
+                } else {
+                    $user = R::findOne('user', 'login = ? OR email = ?', [$user->attributes['login'], $user->attributes['email']]);
+                    if ($user) {
+                        $user_id = $user->id;
+                    } else {
+                        $user_id = 0;
+                    }
+                }
+            }
+
+            // save order
+            $data['user_id'] = isset($user_id) ? $user_id : $_SESSION['user']['id'];
+            $data['note'] = !empty($_POST['note']) ? $_POST['note'] : '';
+            $user_email = isset($_SESSION['user']['email']) ? $_SESSION['user']['email'] : $_POST['email'];
+            $order_id = Order::saveOrder($data);
+            Order::mailOrder($order_id, $user_email);
+        }
         redirect();
     }
 }

@@ -1913,7 +1913,8 @@ h3.ghj {
 }
 
 /* cart */
-#cart table img {
+#cart img,
+.cart table img {
 	height: 50px;
 }
 

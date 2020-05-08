@@ -19,7 +19,7 @@ class UserController extends AppController {
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($id = $user->save('user')) {
                     $_SESSION['success'] = 'Пользователь зарегистрирован';
-                    $u = R::findOne('user', "id = ?", [$id]);
+                    $u = R::findOne('user', "id = $id");
                     if ($u) {
                         if ($user->login(['login' => $data['login'], 'password' => $data['password']])) {
                             redirect(PATH);
