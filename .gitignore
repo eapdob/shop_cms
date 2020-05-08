@@ -3,6 +3,7 @@
 
 # composer
 !vendor/shop
+vendor
 
 # cms
 tmp
