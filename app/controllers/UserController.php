@@ -43,7 +43,7 @@ class UserController extends AppController {
             } else {
                 $_SESSION['error'] = 'Логин и пароль введены неверно';
             }
-            redirect();
+            redirect('/');
         }
         $this->setMeta('Вход');
     }

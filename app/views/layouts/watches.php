@@ -206,6 +206,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <!-- END modal -->
+
+<!-- preloader -->
+<div class="preloader">
+    <img src="images/ring.svg" alt="preloader"></div>
+</div>
+<!-- END preloader -->
+
 <!-- currency -->
 <?php $currency = \shop\App::$app->getProperty('currency'); ?>
 <script>
