@@ -15,6 +15,7 @@ class View {
 
     public function __construct($route, $layout = '', $view = '', $meta = '') {
         $this->route = $route;
+        $this->prefix = str_replace('\\', DIRECTORY_SEPARATOR, $route['prefix']);
         $this->controller = $route['controller'];
         $this->model = $route['controller'];
         $this->view = $view;
