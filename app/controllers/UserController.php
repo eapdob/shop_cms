@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\User;
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class UserController extends AppController {
 

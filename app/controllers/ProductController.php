@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\Breadcrumbs;
 use app\models\Product;
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class ProductController extends AppController {
     public function viewAction() {

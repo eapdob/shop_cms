@@ -13,7 +13,7 @@
 <?=$age;?>
 <?=$names;?>
 
-<h1>Шаблон DEFAULT</h1>
+<h1>template DEFAULT</h1>
 
 <?=$content;?>
 

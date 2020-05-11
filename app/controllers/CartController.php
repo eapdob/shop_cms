@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\models\Cart;
 use app\models\Order;
 use app\models\User;
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class CartController extends AppController {
 

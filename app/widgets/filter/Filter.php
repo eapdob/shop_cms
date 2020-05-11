@@ -2,7 +2,7 @@
 
 namespace app\widgets\filter;
 
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 use shop\Cache;
 
 class Filter {

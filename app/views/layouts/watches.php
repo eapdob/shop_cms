@@ -9,17 +9,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <head>
     <base href="/">
     <link rel="shortcut icon" href="images/start.png" type="image/png" />
+    <!-- seo meta -->
     <?=$this->getMeta();?>
+    <!-- bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- megamenu -->
     <link rel="stylesheet" href="megamenu/css/ionicons.min.css">
     <link rel="stylesheet" href="megamenu/css/style.css">
-    <!-- FlexSlider -->
+    <!-- flexslider -->
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <!--Custom-Theme-files-->
-    <!--theme-style-->
+    <!-- custom style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--//theme-style-->
+    <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- charset -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
@@ -84,9 +87,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <?php new \app\widgets\menu\Menu([
                             'tpl' => WWW . '/menu/menu.php',
                             'table' => 'category',
-//                            'attrs' => [
-//                                'style' => 'color:red'
-//                            ],
                         ]); ?>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </form>
                 </div>
             </div>
-            <div class="clearfix"> </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
@@ -162,7 +162,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <span>Lorem ipsum dolor,</span>
                     Glasglow Dr 40 Fe 72.</h4>
                 <h5>+955 123 4567</h5>
-                <p><a href="mailto:example@email.com">contact@example.com</a></p>
+                <p><a href="mailto:eapdob@gmail.com">eapdob@gmail.com</a></p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -180,7 +180,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </form>
             </div>
             <div class="col-md-6 footer-right">
-                <p>© 2015 Luxury Watches. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+                <p>© <?php date('Y'); ?> Luxury Watches. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -193,15 +193,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Корзина</h4>
+                <h4 class="modal-title" id="myModalLabel">Checkout</h4>
             </div>
             <div class="modal-body">
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
-                <a href="cart/view" type="button" class="btn btn-primary">Оформить заказ</a>
-                <button type="button" class="btn btn-danger" onclick="clearCart()">Очистить корзину</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+                <a href="cart/view" type="button" class="btn btn-primary">Checkout</a>
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Clear</button>
             </div>
         </div>
     </div>
@@ -223,8 +223,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         symbolRight = '<?=$currency['symbol_right'];?>';
 </script>
 <!-- END currency -->
+
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!-- typehead -->
 <script src="js/typeahead.bundle.js"></script>
 <!-- Bootstrap validator -->
 <script src="js/validator.js"></script>
@@ -255,7 +257,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     });
 </script>
-<!-- FlexSlider -->
+<!-- flexslider -->
 <script src="js/imagezoom.js"></script>
 <script defer src="js/jquery.flexslider.js"></script>
 <script>
@@ -267,6 +269,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
     });
 </script>
+
 <!--dropdown-->
 <script src="js/jquery.easydropdown.js"></script>
 <script type="text/javascript">
@@ -291,14 +294,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     });
 </script>
-<script src="js/main.js"></script>
-<?php
-use \RedBeanPHP\R as R;
-$logs = R::getDatabaseAdapter()
-    ->getDatabase()
-    ->getLogger();
 
-debug( $logs->grep('SELECT') );
+<!-- custom js -->
+<script src="js/main.js"></script>
+
+<!-- debug -->
+<?php
+use \RedBeanPHP\R;
+if (DEBUG) {
+    $logs = R::getDatabaseAdapter()
+        ->getDatabase()
+        ->getLogger();
+
+    debug( $logs->grep('SELECT') );
+}
 ?>
+
 </body>
 </html>

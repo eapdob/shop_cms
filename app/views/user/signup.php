@@ -3,8 +3,8 @@
     <div class="container">
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
-                <li><a href="<?= PATH ?>">Главная</a></li>
-                <li>Регистрация</li>
+                <li><a href="<?= PATH ?>">Home</a></li>
+                <li>Registration</li>
             </ol>
         </div>
     </div>

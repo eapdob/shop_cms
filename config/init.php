@@ -10,13 +10,13 @@ define("CACHE", ROOT . '/tmp/cache');
 define("CONF", ROOT . '/config');
 define("LAYOUT", 'watches');
 
-// http://shop.loc/public/index.php
+// http://domain/public/index.php
 $app_path = "http://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 
-// http://shop.loc/public/
+// http://domain/public/
 $app_path = preg_replace("#[^/]+$#", '', $app_path);
 
-// http://shop.loc
+// http://domain/
 $app_path = str_replace('public/', '', $app_path);
 
 define("PATH", $app_path);

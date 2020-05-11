@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\Cart;
 use shop\base\Controller;
-use \RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class CurrencyController extends AppController {
 

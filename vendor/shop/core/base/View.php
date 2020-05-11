@@ -38,7 +38,7 @@ class View {
             require_once $viewFile;
             $content = ob_get_clean();
         } else {
-            throw new \Exception("Страница не найдена {$viewFile}", 500);
+            throw new \Exception("Page not found {$viewFile}", 500);
         }
 
         if ($this->layout !== false) {
@@ -47,10 +47,10 @@ class View {
             if (is_file($layoutFile)) {
                 require_once $layoutFile;
             } else {
-                throw new \Exception("Файл шаблона не найден {$viewFile}", 500);
+                throw new \Exception("Layout file not found {$layoutFile}", 500);
             }
         } else {
-            throw new \Exception("Шаблон не найден {$viewFile}", 500);
+            throw new \Exception("Layout not found {$this->layout}", 500);
         }
     }
 

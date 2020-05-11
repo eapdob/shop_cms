@@ -3,10 +3,10 @@
         <table class="table table-hover table-striped">
             <thead>
             <tr>
-                <th>Фото</th>
-                <th>Наименования</th>
-                <th>Кол-во</th>
-                <th>Цена</th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
                 <th><span class="glyphicon glyphicon-remove" arial-hidden="true"></span></th>
             </tr>
             </thead>
@@ -21,16 +21,16 @@
                 </tr>
             <?php endforeach; ?>
             <tr>
-                <td>Итого:</td>
+                <td>Total:</td>
                 <td colspan="4" class="text-right cart-qty"><?=$_SESSION['cart']['qty'];?></td>
             </tr>
             <tr>
-                <td>На сумму:</td>
+                <td>For the amount:</td>
                 <td colspan="4" class="text-right cart-sum"><?=$_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . $_SESSION['cart.currency']['symbol_right'];?></td>
             </tr>
             </tbody>
         </table>
     </div>
 <?php else: ?>
-    <h3>Корзина пуста</h3>
+    <h3>Cart is empty</h3>
 <?php endif; ?>

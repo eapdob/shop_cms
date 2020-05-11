@@ -16,11 +16,11 @@ class ErrorHandler {
 
     public function exceptionHandler($e) {
         $this->logErrors($e->getMessage(), $e->getFile(), $e->getLine());
-        $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
+        $this->displayError('Exception', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
     }
 
     protected function logErrors($message = '', $file = '', $line = '') {
-        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$message} | Файл: {$file} | Строка: {$line}\n================\n", 3, ROOT . '/tmp/errors.log');
+        error_log("[" . date('Y-m-d H:i:s') . "] Text error: {$message} | File: {$file} | String: {$line}\n================\n", 3, ROOT . '/tmp/errors.log');
     }
 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 404) {

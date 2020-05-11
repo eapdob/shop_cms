@@ -4,7 +4,7 @@ namespace shop\base;
 
 use shop\Db;
 use Valitron\Validator;
-use \RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 abstract class Model {
 

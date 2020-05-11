@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use \RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class SearchController extends AppController {
 

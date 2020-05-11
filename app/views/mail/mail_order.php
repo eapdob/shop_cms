@@ -11,10 +11,10 @@
 <table style="border: 1px solid #ddd; border-collapse: collapse; width: 100%;">
     <thead>
     <tr style="background: #f9f9f9;">
-        <th style="padding: 8px; border: 1px solid #ddd;">Наименование</th>
-        <th style="padding: 8px; border: 1px solid #ddd;">Кол-во</th>
-        <th style="padding: 8px; border: 1px solid #ddd;">Цена</th>
-        <th style="padding: 8px; border: 1px solid #ddd;">Сумма</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Name</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Quantity</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Price</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Sum</th>
     </tr>
     </thead>
     <tbody>
@@ -27,11 +27,11 @@
         </tr>
     <?php endforeach;?>
     <tr>
-        <td colspan="3" style="padding: 8px; border: 1px solid #ddd;">Итого:</td>
+        <td colspan="3" style="padding: 8px; border: 1px solid #ddd;">Total:</td>
         <td style="padding: 8px; border: 1px solid #ddd;"><?=$_SESSION['cart.qty'] ?></td>
     </tr>
     <tr>
-        <td colspan="3" style="padding: 8px; border: 1px solid #ddd;">На сумму:</td>
+        <td colspan="3" style="padding: 8px; border: 1px solid #ddd;">For the amount:</td>
         <td style="padding: 8px; border: 1px solid #ddd;"><?= $_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . " {$_SESSION['cart.currency']['symbol_right']}" ?></td>
     </tr>
     </tbody>

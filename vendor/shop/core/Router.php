@@ -3,6 +3,7 @@
 namespace shop;
 
 class Router {
+
     protected static $routes = [];
     protected static $route = [];
 
@@ -32,13 +33,13 @@ class Router {
                     $controllerObject->$action();
                     $controllerObject->getView();
                 } else {
-                    throw new \Exception("Метод $controller::$action не найден", 404);
+                    throw new \Exception("Method $controller->$action not found", 404);
                 }
             } else {
-                throw new \Exception("Контроллер $controller не найден", 404);
+                throw new \Exception("Controller $controller not found", 404);
             }
         } else {
-            throw new \Exception("Страница не найдена", 404);
+            throw new \Exception("$url not found in routes", 404);
         }
     }
 
@@ -69,7 +70,6 @@ class Router {
         return false;
     }
 
-    // camelCase
     protected static function removeQueryString($url) {
         if ($url) {
             $params = explode('&', $url, 2);
@@ -81,12 +81,10 @@ class Router {
         }
     }
 
-    // CamelCase
     protected static function upperCamelCase($name) {
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
     }
 
-    // camelCase
     protected static function lowerCamelCase($name) {
         return lcfirst(self::upperCamelCase($name));
     }

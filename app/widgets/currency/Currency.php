@@ -2,7 +2,7 @@
 
 namespace app\widgets\currency;
 
-use \RedBeanPHP\R as R;
+use \RedBeanPHP\R;
 use shop\App as App;
 
 class Currency {

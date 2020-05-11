@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 use shop\App;
 use Swift_Mailer;
 use Swift_Message;
@@ -44,12 +44,12 @@ class Order extends AppModel {
         require APP . '/views/mail/mail_order.php';
         $body = ob_get_clean();
 
-        $messageClient = (new Swift_Message("Вы совершили Заказ № {$order_id} на сайте " . App::$app->getProperty('shop_name') . ""))
+        $messageClient = (new Swift_Message("You have completed an order № {$order_id} on the site " . App::$app->getProperty('shop_name') . ""))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('shop_name')])
             ->setTo([$user_email])
             ->setBody($body, 'text/html');
 
-        $messageAdmin = (new Swift_Message("Сделан заказ № {$order_id}"))
+        $messageAdmin = (new Swift_Message("Order № {$order_id}"))
             ->setFrom([App::$app->getProperty('smtp_login') => App::$app->getProperty('shop_name')])
             ->setTo([App::$app->getProperty('admin_email')])
             ->setBody($body, 'text/html');
@@ -62,7 +62,7 @@ class Order extends AppModel {
             unset($_SESSION['cart.qty']);
             unset($_SESSION['cart.sum']);
             unset($_SESSION['cart.currency']);
-            $_SESSION['success'] = 'Спасибо за Ваш заказ. В ближайшее время с вами свяжется менеджер для согласования заказа';
+            $_SESSION['success'] = 'Thanks for your order. In the near future, a manager will contact you to agree on an order';
         }
     }
 }

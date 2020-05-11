@@ -4,7 +4,7 @@ namespace app\widgets\menu;
 
 use shop\App;
 use shop\Cache;
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class Menu {
 

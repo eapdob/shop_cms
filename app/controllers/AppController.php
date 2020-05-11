@@ -7,7 +7,7 @@ use app\models\AppModel;
 use shop\App;
 use app\widgets\currency\Currency;
 use shop\Cache;
-use RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class AppController extends Controller {
 

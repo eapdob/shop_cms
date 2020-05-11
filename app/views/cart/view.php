@@ -3,8 +3,8 @@
     <div class="container">
         <div class="breadcrumbs-main">
             <ol class="breadcrumb">
-                <li><a href="<?= PATH ?>">Главная</a></li>
-                <li>Корзина</li>
+                <li><a href="<?= PATH ?>">Home</a></li>
+                <li>Cart</li>
             </ol>
         </div>
     </div>
@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="product-one cart">
                     <div class="register-top heading">
-                        <h2>Оформление заказа</h2>
+                        <h2>Checkout</h2>
                     </div>
                     <br><br>
                     <?php if(!empty($_SESSION['cart'])):?>
@@ -25,10 +25,10 @@
                             <table class="table table-hover table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Фото</th>
-                                    <th>Наименование</th>
-                                    <th>Кол-во</th>
-                                    <th>Цена</th>
+                                    <th>Photo</th>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
                                     <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
                                 </tr>
                                 </thead>
@@ -43,11 +43,11 @@
                                     </tr>
                                 <?php endforeach;?>
                                 <tr>
-                                    <td>Итого:</td>
+                                    <td>Total:</td>
                                     <td colspan="4" class="text-right cart-qty"><?=$_SESSION['cart.qty'] ?></td>
                                 </tr>
                                 <tr>
-                                    <td>На сумму:</td>
+                                    <td>For the amount :</td>
                                     <td colspan="4" class="text-right cart-sum"><?= $_SESSION['cart.currency']['symbol_left'] . $_SESSION['cart.sum'] . " {$_SESSION['cart.currency']['symbol_right']}" ?></td>
                                 </tr>
                                 </tbody>
@@ -57,18 +57,7 @@
                             <form method="post" action="cart/checkout" role="form" data-toggle="validator">
                                 <?php if(!isset($_SESSION['user'])): ?>
                                     <div class="form-group has-feedback">
-                                        <label for="login">Login</label>
-                                        <input type="text" name="login" class="form-control" id="login" placeholder="Login" value="<?= isset($_SESSION['form_data']['login']) ? $_SESSION['form_data']['login'] : '' ?>">
-                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="pasword">Password</label>
-                                        <input type="password" name="password" class="form-control" id="pasword" placeholder="Password" value="<?= isset($_SESSION['form_data']['password']) ? $_SESSION['form_data']['password'] : '' ?>" data-minlength="6" data-error="Пароль должен включать не менее 6 символов">
-                                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label for="name">Имя</label>
+                                        <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" id="name" placeholder="Имя" value="<?= isset($_SESSION['form_data']['name']) ? $_SESSION['form_data']['name'] : '' ?>" required>
                                         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                                     </div>
@@ -87,12 +76,12 @@
                                     <label for="address">Note</label>
                                     <textarea name="note" class="form-control"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-default">Оформить</button>
+                                <button type="submit" class="btn btn-default">Checkout</button>
                             </form>
                             <?php if(isset($_SESSION['form_data'])) unset($_SESSION['form_data']); ?>
                         </div>
                     <?php else: ?>
-                        <h3>Корзина пуста</h3>
+                        <h3>Cart is empty</h3>
                     <?php endif;?>
                 </div>
             </div>

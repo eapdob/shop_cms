@@ -1876,9 +1876,9 @@ h3.ghj {
 .register{
 	padding:6em 0px;
 }
+/*--end-register--*/
 
 /* new styles */
-
 .srch {
 	display: block;
 }
@@ -1888,7 +1888,6 @@ h3.ghj {
 }
 
 /* megamenu-js */
-
 .menu > ul {
 	background: #fff;
 }
@@ -2067,10 +2066,8 @@ form .has-error .form-control {
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
-
 /* END new styles */
 
-/*--end-register--*/
 /*--media-quaries-starts-here--*/
 @media (max-width:1440px){
 .banner,.banner1,.banner2{

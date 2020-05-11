@@ -2,7 +2,7 @@
 
 namespace shop;
 
-use \RedBeanPHP\R as R;
+use RedBeanPHP\R;
 
 class Db extends \RedBeanPHP\SimpleModel {
 
@@ -11,10 +11,10 @@ class Db extends \RedBeanPHP\SimpleModel {
     protected function __construct() {
         $db = require_once CONF . '/config_db.php';
 
-        R::setup($db['dsn'], $db['user'], $db['pass']);
+        R::setup($db['dns'], $db['user'], $db['pass']);
 
         if (!R::testConnection()) {
-            throw New \Exception("Нет соединения с бд", 500);
+            throw New \Exception("No connection to db", 500);
         }
 
         R::freeze(true);
