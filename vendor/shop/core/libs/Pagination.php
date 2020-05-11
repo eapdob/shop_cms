@@ -53,7 +53,7 @@ class Pagination {
             $page1right = "<li><a class='nav-link' href='{$this->uri}page=" . ($this->currentPage + 1) . "'>" . ($this->currentPage + 1) . "</a></li>";
         }
 
-        return '<ul class="pagination">' . $startpage . $back . $page2left . $page1left . '<li class="active"><a>' . $this->currentPage . '</a></li>' . $page1right . $page2right . $forward . $endpage . '</ul>';
+        return '<ul class="pagination">' . $startpage . $back . $page2left . $page1left . '<li class="active"><a class="nav-link">' . $this->currentPage . '</a></li>' . $page1right . $page2right . $forward . $endpage . '</ul>';
     }
 
     public function getCountPages() {

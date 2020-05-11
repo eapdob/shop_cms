@@ -5041,6 +5041,9 @@ input[type="button"].btn-block {
 .pagination {
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
