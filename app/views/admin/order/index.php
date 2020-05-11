@@ -58,9 +58,9 @@
                                     <td><?=($order['name'] != '') ? $order['name'] : 'Guest';?></td>
                                     <td><?=$order['status'] ? 'Completed' : 'New'; ?></td>
                                     <td><?=$order['sum'];?></td>
-                                    <td><?=$order['date_added'];?></td>
-                                    <td><?=$order['date_updated'];?></td>
-                                    <td><a href="<?=ADMIN;?>/order/view?id=1"><i class="fa fa-fw fa-eye"></i></a></td>
+                                    <td><?=$order['date'];?></td>
+                                    <td><?=$order['update_at'] ? $order['update_at'] : '--'; ?></td>
+                                    <td><a href="<?=ADMIN;?>/order/view?id=<?=$order['id'];?>"><i class="fa fa-fw fa-eye"></i></a></td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>

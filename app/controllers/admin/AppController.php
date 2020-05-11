@@ -18,4 +18,17 @@ class AppController extends Controller {
             redirect(ADMIN . '/user/login-admin');
         }
     }
+
+    public function getRequestID($get = true) {
+        if ($get) {
+            $data = $_GET;
+        } else {
+            $data = $_POST;
+        }
+        $id = !empty($data['id']) ? (int) $data['id'] : null;
+        if (!$id) {
+            throw new \Exception('Page not found', 404);
+        }
+        return $id;
+    }
 }

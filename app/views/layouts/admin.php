@@ -159,21 +159,33 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="<?=ADMIN;?>" class="brand-link">
+        <a href="<?=PATH;?>" class="brand-link" target="_blank">
             <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light pl-4">Shop</span>
         </a>
 
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <div class="image mt-2">
+                    <img src="dist/img/AdminLTELogo.png" class="img-circle elevation-2" alt="User Image">
                 </div>
-                <div class="info">
-                    <a href="<?=ADMIN;?>" class="d-block">Alexander Pierce</a>
+                <div class="info w-100">
+                    <ul class="nav nav-sidebar flex-column" data-widget="treeview" role="menu">
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link"><p><?=$_SESSION['user']['name'];?><i class="right fas fa-angle-left"></i></p></a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?=ADMIN;?>/user/edit?id=<?=$_SESSION['user']['id']; ?>" class="nav-link pl-4">Edit</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/user/logout" class="nav-link pl-4">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -204,10 +216,10 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/category">Categories list</a>
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/category">Categories list</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/category/add">
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/category/add">
                                     Add category
                                 </a>
                             </li>
@@ -223,12 +235,12 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/product">
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/product">
                                     Product's list
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/product/add">
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/product/add">
                                     Add product
                                 </a>
                             </li>
@@ -250,12 +262,12 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/user">
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/user">
                                     User's list
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/user/add">
+                                <a class="nav-link pl-5" href="<?= ADMIN ?>/user/add">
                                     Add user
                                 </a>
                             </li>

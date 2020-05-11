@@ -16,6 +16,7 @@ class OrderController extends AppController {
         $pagination = new Pagination($page, $perPage, $count);
         $start = $pagination->getStart();
 
+        // order
         $sql = "(SELECT 
                 `order`.`id`, `order`.`user_id`, `order`.`status`, `order`.`date`, `order`.`update_at`, `order`.`currency`, 
                 `user`.`name`, ROUND(SUM(`order_product`.`price`), 2) 
@@ -42,5 +43,43 @@ class OrderController extends AppController {
 
         $this->setMeta('Orders list');
         $this->set(compact('orders', 'pagination', 'count'));
+    }
+
+    public function viewAction() {
+        // order
+        $orderId = $this->getRequestID();
+        $sql = "
+            (SELECT 
+                `order`.*,`user`.`name`, ROUND(SUM(`order_product`.`price`), 2) 
+            AS `sum` 
+            FROM `order` 
+            LEFT JOIN `user` 
+            ON `order`.`user_id` = `user`.`id` 
+            LEFT JOIN `order_product` 
+            ON `order`.`id` = `order_product`.`order_id` 
+            WHERE `order`.`user_id` = '0' AND `order`.`id` = ? GROUP BY `order`.`id` 
+            ORDER BY `order`.`id`) 
+            UNION 
+            (SELECT 
+                `order`.*, `user`.`name`, ROUND(SUM(`order_product`.`price`), 2) 
+            AS `sum` 
+            FROM `order` 
+            JOIN `user` 
+            ON `order`.`user_id` = `user`.`id` 
+            JOIN `order_product` 
+            ON `order`.`id` = `order_product`.`order_id`
+            WHERE `order`.`id` = ?
+            GROUP BY `order`.`id` 
+            ORDER BY `order`.`status`, `order`.`id`) LIMIT 1";
+        $order = R::getRow($sql, [$orderId, $orderId]);
+        if (!$order) {
+            throw new \Exception('Page not found', 404);
+        }
+
+        // products
+        $orderProducts = R::findAll('order_product', "order_id = ?", [$order['id']]);
+
+        $this->setMeta("Order #{$orderId}");
+        $this->set(compact('order', 'orderProducts'));
     }
 }
