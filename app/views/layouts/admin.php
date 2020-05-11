@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/adminlte/"/>
-    <title>AdminLTE 3 | Dashboard</title>
+    <link rel="shortcut icon" href="<?=PATH;?>images/star.png" type="image/png" />
+    <!-- seo meta -->
+    <?=$this->getMeta();?>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -190,23 +192,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= ADMIN ?>/order">
                             <i class="nav-icon fa fa-shopping-cart"></i>
-                            <p>Заказы</p>
+                            <p>Orders</p>
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
                         <a class="nav-link" href="#">
                             <i class="nav-icon fas fa-bars"></i>
-                            <p>Категории
+                            <p>Categories
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= ADMIN ?>/category">Список категорий</a>
+                                <a class="nav-link" href="<?= ADMIN ?>/category">Categories list</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= ADMIN ?>/category/add">
-                                    Добавить категорию
+                                    Add category
                                 </a>
                             </li>
                         </ul>
@@ -215,19 +217,19 @@
                         <a class="nav-link" href="#">
                             <i class="nav-icon fa fa-cubes"></i>
                             <p>
-                                Товары
+                                Products
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= ADMIN ?>/product">
-                                    Список товаров
+                                    Product's list
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= ADMIN ?>/product/add">
-                                    Добавить товар
+                                    Add product
                                 </a>
                             </li>
                         </ul>
@@ -235,26 +237,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= ADMIN ?>/cache">
                             <i class="nav-icon fa fa-database"></i>
-                            <p>Кэширование</p>
+                            <p>Cache</p>
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
                         <a class="nav-link" href="#">
                             <i class="nav-icon fa fa-users"></i>
                             <p>
-                                Пользователи
+                                Users
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= ADMIN ?>/user">
-                                    Список пользователей
+                                    User's list
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= ADMIN ?>/user/add">
-                                    Добавить пользователя
+                                    Add user
                                 </a>
                             </li>
                         </ul>
@@ -324,7 +326,5 @@
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 </body>
 </html>
