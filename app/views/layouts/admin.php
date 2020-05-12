@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="custom.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -282,6 +284,20 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+        <?php if(isset($_SESSION['success'])): ?>
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Success!</h5>
+                <?=$_SESSION['success']; unset($_SESSION['success'])?>
+            </div>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['error'])): ?>
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> Error!</h5>
+                <?=$_SESSION['error']; unset($_SESSION['error'])?>
+            </div>
+        <?php endif; ?>
         <?= $content; ?>
     </div>
     <!-- /.content-wrapper -->
@@ -338,5 +354,7 @@
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<!-- custom js -->
+<script src="custom.js"></script>
 </body>
 </html>

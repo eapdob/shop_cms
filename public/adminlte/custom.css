@@ -1,0 +1,27 @@
+.alert-success,
+.alert-error {
+    border-radius: 0;
+}
+
+tr.success {
+    background: #bfff99;
+}
+
+.pagination li a {
+    background: #fff;
+    border-left: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+    color: #0056b3;
+    padding: .5rem 1rem;
+}
+
+.pagination li a:hover {
+    background: #e9ecef;
+    color: #0056b3;
+    cursor: pointer;
+}
+
+.pagination li:last-child a {
+    border-right: 1px solid #dee2e6;
+}

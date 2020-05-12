@@ -82,4 +82,34 @@ class OrderController extends AppController {
         $this->setMeta("Order #{$orderId}");
         $this->set(compact('order', 'orderProducts'));
     }
+
+    public function changeAction() {
+        $orderId = $this->getRequestID();
+        $status = (!empty($_GET['status'])) ? '1' : '0';
+
+//        $order = R::load('order', $orderId);
+//        if (!$order) {
+//            throw new \Exception('Page not found', 404);
+//        }
+//        $order->status = $status;
+//        $order->update_at = date('Y-m-d H:i:s');
+//        R::store($order);
+
+        $update_at = date('Y-m-d H:i:s');
+        $sql = "UPDATE `order` SET status = '{$status}', update_at = '{$update_at}' WHERE id = ?";
+        $result = R::exec($sql, [$orderId]);
+        if ($result) {
+            $_SESSION['success'] = 'Changes saved';
+        }
+        redirect();
+    }
+
+    public function deleteAction() {
+        $orderId = $this->getRequestID();
+
+        $order = R::load('order', $orderId);
+        R::trash($order);
+        $_SESSION['success'] = 'Order has been removed';
+        redirect(ADMIN . '/order');
+    }
 }
