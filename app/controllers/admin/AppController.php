@@ -19,7 +19,7 @@ class AppController extends Controller {
         }
     }
 
-    public function getRequestID($get = true) {
+    public function getRequestID($get = true, $id = 'id') {
         if ($get) {
             $data = $_GET;
         } else {

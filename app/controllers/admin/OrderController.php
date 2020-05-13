@@ -109,7 +109,7 @@ class OrderController extends AppController {
 
         $order = R::load('order', $orderId);
         R::trash($order);
-        $_SESSION['success'] = 'Order has been removed';
+        $_SESSION['success'] = 'Order removed';
         redirect(ADMIN . '/order');
     }
 }

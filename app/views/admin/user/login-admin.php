@@ -19,13 +19,13 @@
                 <?=$_SESSION['error']; unset($_SESSION['error'])?>
             </div>
         <?php endif; ?>
-        <form action="<?=ADMIN;?>/user/login-admin" method="post">
+        <form action="<?=ADMIN;?>/user/login-admin" method="post" data-toggle="validator">
             <div class="form-group has-feedback">
-                <input name="login" type="text" class="form-control" placeholder="Login">
+                <input name="login" type="text" class="form-control" placeholder="Login" required>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="password" type="password" class="form-control" placeholder="Password">
+                <input name="password" type="password" class="form-control" placeholder="Password" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">

@@ -210,7 +210,7 @@
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link">
                             <i class="nav-icon fas fa-bars"></i>
                             <p>Categories
                                 <i class="right fas fa-angle-left"></i>
@@ -228,7 +228,7 @@
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link">
                             <i class="nav-icon fa fa-cubes"></i>
                             <p>
                                 Products
@@ -255,7 +255,7 @@
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link">
                             <i class="nav-icon fa fa-users"></i>
                             <p>
                                 Users
@@ -352,9 +352,9 @@
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
 <!-- custom js -->
 <script src="custom.js"></script>
+<!-- Validator -->
+<script src="validator.js"></script>
 </body>
 </html>

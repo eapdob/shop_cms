@@ -1,5 +1,4 @@
-.alert-success,
-.alert-error {
+.alert {
     border-radius: 0;
 }
 
@@ -24,4 +23,45 @@ tr.success {
 
 .pagination li:last-child a {
     border-right: 1px solid #dee2e6;
+}
+
+.list-group.list-group-root {
+    padding: 0;
+    overflow: hidden;
+}
+
+.list-group, .list-group.list-group-root > p .list-group {
+    margin-bottom: 0;
+}
+
+.list-group.list-group-root .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+}
+
+.list-group.list-group-root > .list-group-item:first-child {
+    border-top-width: 0;
+}
+
+.list-group.list-group-root > .list-group > p > .list-group-item {
+    padding-left: 30px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > p > .list-group-item {
+    padding-left: 45px;
+}
+.item-p{
+    margin: 0;
+    position: relative;
+}
+.item-p > span{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-item.active a {
+    background-color: rgba(255,255,255,.1);
+    color: #fff;
 }
